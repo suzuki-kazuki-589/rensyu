@@ -1,0 +1,19 @@
+# Git練習用プログラム
+# profile.txt から自己紹介情報を読み込んで表示するプログラム
+
+def load_profile(filename):
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            return file.read()
+    except FileNotFoundError:
+        return "プロフィールファイルが見つかりません。"
+
+
+def main():
+    print("=== 自己紹介アプリ ===")
+    profile = load_profile("profile.txt")
+    print(profile)
+
+
+if __name__ == "__main__":
+    main()
